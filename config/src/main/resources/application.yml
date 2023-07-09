@@ -5,7 +5,7 @@ eureka:
 
 spring:
   application:
-    name: config-server
+    name: config-service
   cloud:
     config:
       server:
@@ -13,4 +13,4 @@ spring:
           uri: https://github.com/npawlenko/cloud-config
 
 server:
-  port: 8081
+  port: 8888
