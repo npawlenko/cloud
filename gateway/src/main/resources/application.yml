@@ -8,12 +8,12 @@ spring:
           id: payment-service
           uri: lb://payment-service
           predicates:
-            - Path=/api/v1/payments**
+            - Path=/api/v1/payments/**
         -
           id: user-service
           uri: lb://user-service
           predicates:
-            - Path=/api/v1/users**
+            - Path=/api/v1/users/**
 
 eureka:
   client:
