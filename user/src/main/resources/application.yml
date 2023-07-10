@@ -2,12 +2,14 @@ spring:
   datasource:
     driver-class-name: org.postgresql.Driver
     url: jdbc:postgresql://localhost:5432/cloud_user
-    username: postgresql
-    password: postgresql
+    username: postgres
+    password: postgres
   jpa:
     show-sql: true
   application:
     name: user-service
+  config:
+    import: configserver:http://localhost:8888
 eureka:
   client:
     service-url:
