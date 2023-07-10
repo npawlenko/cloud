@@ -9,6 +9,8 @@ import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
 import org.springframework.web.bind.annotation.ResponseStatus;
 
+import java.util.List;
+
 @Service
 @RequiredArgsConstructor
 public class UserService {
@@ -26,5 +28,13 @@ public class UserService {
     public PaymentCreationResponse createPayment(PaymentCreationRequest paymentCreationRequest) {
         User u = findById(paymentCreationRequest.getUserId());
         return payment.createPayment(paymentCreationRequest);
+    }
+
+    public List<User> findAll() {
+        return repository.findAll();
+    }
+
+    public User createUser(User user) {
+        return repository.save(user);
     }
 }

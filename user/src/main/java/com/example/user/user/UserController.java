@@ -5,16 +5,27 @@ import com.example.user.model.PaymentCreationResponse;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
 @RestController
-@RequestMapping("/api/v1/users")
 @RequiredArgsConstructor
 public class UserController {
 
     private final UserService service;
 
+    @GetMapping
+    public List<User> findAll() {
+        return service.findAll();
+    }
+
     @GetMapping("/{id}")
     public User findById(@PathVariable Long id) {
         return service.findById(id);
+    }
+
+    @PostMapping
+    public User createUser(@RequestBody User user) {
+        return service.createUser(user);
     }
 
     @PostMapping("/{id}/payments")

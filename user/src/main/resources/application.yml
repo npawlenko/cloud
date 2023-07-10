@@ -6,6 +6,8 @@ spring:
     password: postgres
   jpa:
     show-sql: true
+    hibernate:
+      ddl-auto: create
   application:
     name: user-service
   config:
